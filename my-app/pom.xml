@@ -105,6 +105,10 @@
               </compilerArgs>
           </configuration>
       </plugin>
+    </plugins>
+  </build>
+    <build>
+    <plugins>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>buildnumber-maven-plugin</artifactId>
@@ -121,8 +125,10 @@
           <doCheck>true</doCheck>
           <doUpdate>true</doUpdate>
         </configuration>
-      </plugin>      
+      </plugin>
     </plugins>
-    <finalName>${project.artifactId}-${project.version}.${buildNumber}</finalName>
+  </build>
+    <build>
+    <finalName>$\{project.artifactId}-$\{project.version}-r$\{buildNumber}</finalName>
   </build>
 </project>
