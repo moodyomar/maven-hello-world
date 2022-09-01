@@ -24,10 +24,10 @@ jobs:
           cd my-app/target
           ls -a
 
-        name: Step 5 - Set up QEMU
+      - name: Step 5 - Set up QEMU
         uses: docker/setup-qemu-action@v1
-      -
-        name: Step 6 - Set up Docker Buildx
+
+      - name: Step 6 - Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
       - name: Step 7 - Login to DockerHub
