@@ -46,4 +46,4 @@ jobs:
           context: .
           file: ./my-app/Dockerfile
           push: true
-          tags: ${{secrets.DOCKERHUB_USERNAME}}/my-app/my-app-1.0.0.jar:v${{github.run_number}}
+          tags: ${{secrets.DOCKERHUB_USERNAME}}/maven-hello:v${{github.run_number}}
