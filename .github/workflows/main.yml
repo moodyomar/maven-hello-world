@@ -39,6 +39,6 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Step 5 - check the target files
         run: |
-          cd target
+          cd my-app/target
           ls -a
 
