@@ -36,14 +36,13 @@ jobs:
           username: '${{secrets.DOCKERHUB_USERNAME}}'
           password: '${{secrets.DOCKERHUB_TOKEN}}'
 
-      - name: Step 8 - Download artifact
-        uses: actions/download-artifact@v2
-
-      - name: Step 9 - Build and push to docker hub
+      - name: Step 8 - Build and push to docker hub
+        env:
+            version: $(mvn help:evaluate -Dexpression=project.version -q -DforceStdout --file ./my-app/pom.xml)
         id: docker_build
         uses: docker/build-push-action@v2
         with:
           context: .
           file: ./my-app/Dockerfile
           push: true
-          tags: ${{secrets.DOCKERHUB_USERNAME}}/maven-hello:v${{github.run_number}}
+          tags: ${{secrets.DOCKERHUB_USERNAME}}/mvn-hello:v${{ env.version }}
