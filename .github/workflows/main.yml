@@ -52,3 +52,5 @@ jobs:
       #     file: ./my-app/Dockerfile
       #     push: true
       #     tags: ${{secrets.DOCKERHUB_USERNAME}}/maven-hello:v${{github.run_number}}
+      
+      # Bdika nosefet
