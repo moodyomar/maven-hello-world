@@ -19,7 +19,15 @@ jobs:
       - name: Step 3 - Build maven project
         run: mvn -B package --file ./my-app/pom.xml
 
-      - name: Step 4 - check the target files
+      - name: Step 4b - check the target files
+        run: |
+          cd my-app/target
+          ls -a
+
+      - name: Step 4 - Update POM Version
+        run: mvn validate -DbumpPatch --file ./my-app/pom.xml
+
+      - name: Step 4a - check the target files
         run: |
           cd my-app/target
           ls -a
