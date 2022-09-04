@@ -1,3 +1,4 @@
 FROM openjdk:8-jre-alpine3.9
-COPY my-app/target/*.jar /app.jar
+ARG version
+COPY my-app/target/my-app-${version}.jar ./app.jar
 CMD ["java", "-jar", "/app.jar"]
